@@ -1,0 +1,161 @@
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family:sans-serif;
+}
+#game, .deck {
+    height:100%;
+    position:relative;
+}
+#settings {
+    z-index:1;
+}
+a {
+    color:inherit;
+    outline:none;
+    /* disable iOS grey background flash for clicked hyperlinks */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/*
+ * Settings handling.
+ * The UI will set these data attributes.
+ * Commented data attibutes are the default settings.
+ */
+/* data-font=traditional */ .thai {
+    font-family:"CSPraKas";
+}
+[data-font=modern] .thai {
+    font-family:"Circular";
+}
+
+/* data-mode=thai-prompt */ .card .thai {
+    display:inline-block;
+}
+
+/* data-mode=thai-prompt */ .flipped.card .thai {
+    display:none;
+}
+
+/* data-mode=thai-prompt */ .card .english {
+    display:none;
+}
+
+/* data-mode=thai-prompt */ .flipped.card .english {
+    display:inline-block;
+}
+
+/* there's also a reversed state */
+[data-mode=english-prompt] .card .thai {
+    display:none;
+}
+
+[data-mode=english-prompt] .flipped.card .thai {
+    display:inline-block;
+}
+
+[data-mode=english-prompt] .card .english {
+    display:inline-block;
+}
+
+[data-mode=english-prompt] .flipped.card .english {
+    display:none;
+}
+
+#settings {
+    display:none;
+    position:absolute;
+    top:2%;
+    left:2%;
+    right:2%;
+    bottom:2%;
+    background-image:radial-gradient(closest-side at 50% 50%, #6d548a 0%, #523d6c 100%);
+    color:#fff;
+    padding:0 1em;
+    box-shadow:0 0 10px #000;
+    border-radius:5px;
+}
+#settings:target {
+    display:block;
+}
+#settings a.close {
+    position:absolute;
+    right:10px;
+    top:5px;
+    text-decoration:none;
+}
+#settings label {
+    padding:0.4em 0;
+}
+#settings button {
+    margin:0.4em 0;
+}
+#settings label,
+#settings select {
+    text-transform:capitalize;
+    display:block;
+    width: 80%;
+}
+#settings input[type="checkbox"] {
+    vertical-align:middle;
+}
+#settings h1 {
+    margin:0;
+    font-size:1em;
+    margin:1em 0 0.5em 0;
+}
+.left-column {
+    float:left;
+    width:50%;
+}
+.right-column {
+    float:right;
+    width:50%;
+}
+.action-bar {
+    text-align:center;
+}
+.action-bar a {
+    color: #555;
+    text-decoration:none;
+    padding: 0 1em;
+}
+.card {
+    text-align:center;
+}
+.card-text {
+    line-height:200px;
+    height:200px;
+    position:absolute;
+    top:1em;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+}
+.nav-btn {
+    display:block;
+    position:absolute;
+    top:2em;
+    bottom:1em;
+    left:0;
+    right:80%;
+    color:#ddd;
+}
+.nav-btn span {
+    position:absolute;
+    top:50%;
+}
+.nav-btn.next {
+    left:80%;
+    right:0;
+}
+.nav-btn.next span {
+    right:0%;
+}
+.star-btn.starred {
+    color: #FFD700;
+}

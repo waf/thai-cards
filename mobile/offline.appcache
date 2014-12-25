@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# v5
+../style/fonts/CSPraKas/styles.css
+../style/fonts/CSPraKas/CSPraKas.otf
+../style/fonts/Circular/styles.css
+../style/fonts/Circular/Circular.woff
+
+
+NETWORK:
+*
+

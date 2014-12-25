@@ -1,0 +1,13 @@
+[
+    {"thai":"ศูนย์","romanization":"sǔun","english":"zero"},
+    {"thai":"หนึ่ง","romanization":"nùeng","english":"one"},
+    {"thai":"สอง","romanization":"sǎawng","english":"two"},
+    {"thai":"สาม","romanization":"sǎam","english":"three"},
+    {"thai":"สี่","romanization":"sìi","english":"four"},
+    {"thai":"ห้า","romanization":"hâa","english":"five"},
+    {"thai":"หก","romanization":"hòk","english":"six"},
+    {"thai":"เจ็ด","romanization":"jèt","english":"seven"},
+    {"thai":"แปด","romanization":"bpàaet","english":"eight"},
+    {"thai":"เก้า","romanization":"gâo","english":"nine"},
+    {"thai":"สิบ","romanization":"sìp","english":"ten"}
+]

@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'CSPraKas';
+  src: url('CSPraKas.eot?#iefix') format('embedded-opentype'),  url('CSPraKas.otf')  format('opentype'),
+	     url('CSPraKas.woff') format('woff'), url('CSPraKas.ttf')  format('truetype'), url('CSPraKas.svg#CSPraKas') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
