@@ -1,10 +1,21 @@
 CACHE MANIFEST
-# v5
+# v8
+http://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js
+../game.min.js
+../mobile/mobile-manifest.json
+../modules.json
+../modules/common.js
+../modules/lesson%203.js
+../modules/lesson%204.js
+../modules/numbers.js
+../modules/phrases.js
+../modules/time%20and%20dates.js
+../style/app-icon.png
 ../style/fonts/CSPraKas/styles.css
-../style/fonts/CSPraKas/CSPraKas.otf
+../style/fonts/CSPraKas/CSPraKas.ttf
 ../style/fonts/Circular/styles.css
-../style/fonts/Circular/Circular.woff
-
+../style/fonts/Circular/Circular.ttf
+../style/site.css
 
 NETWORK:
 *
