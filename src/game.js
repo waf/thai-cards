@@ -73,11 +73,23 @@ var Deck = React.createClass({
     },
     render: function() {
         var card = this.props.cards[this.state.cardIndex];
-        if(!card) {
-            return null;
+        if(card) {
+            var starClass = "star-btn" + (card.starred ? " starred" : "");
+            var translateLink = "http://translate.google.com/#th/en/" + card.thai;
+            var cardUI = (
+                <div>
+                    <Card card={card} onClick={this.flipCard} flipped={this.state.flipped} /> 
+                    <a className="nav-btn back" href="#" onClick={this.prevCard}><span>&#x25C0;</span></a>
+                    <a className="nav-btn next" href="#" onClick={this.nextCard}><span>&#x25B6;</span></a>
+                </div>
+            );
+        } else {
+            var cardUI = (
+                <p style={{textAlign:"center"}}>
+                   No topics are selected. Please select at least one topic from the Settings menu.
+                </p>
+            );
         }
-        var starClass = "star-btn" + (card.starred ? " starred" : "");
-        var translateLink = "http://translate.google.com/#th/en/" + card.thai;
 
         return (
             <div className="deck">
@@ -86,9 +98,7 @@ var Deck = React.createClass({
                     <a className={starClass} href="#" onClick={this.starCard}>&#9733;</a>
                     <a href="#settings">settings</a>
                 </div>
-                <Card card={card} onClick={this.flipCard} flipped={this.state.flipped} /> 
-                <a className="nav-btn back" href="#" onClick={this.prevCard}><span>&#x25C0;</span></a>
-                <a className="nav-btn next" href="#" onClick={this.nextCard}><span>&#x25B6;</span></a>
+                {cardUI}
             </div>
         );
     }
@@ -147,23 +157,19 @@ var Game = React.createClass({
         });
     },
     render: function() {
-        var modulesLoaded = Object.keys(this.state.allModules).length;
-        if(!modulesLoaded) {
-            return null;
-        }
 
-        var deck = [];
-        for(var i in this.state.cards) {
-            var card = this.state.cards[i];
-            card.starred = this.state.starCards.indexOf(card.thai) >= 0;
-            if(!this.state.starMode) {
-                deck.push(card);
-            } else if(card.starred) {
-                deck.push(card);
-            }
+        var deck = this.state.cards;
+        for(var i in deck) {
+            deck[i].starred = this.state.starCards.indexOf(deck[i].thai) >= 0;
         }
-        if(deck.length === 0) {
-            deck = this.state.cards;
+        if(this.state.starMode) {
+            deck = deck.filter(function(card) {
+                return card.starred;
+            });
+            // if we've filtered out all the cards, let's not confuse the user by hiding them all
+            if(deck.length === 0) {
+                deck = this.state.cards;
+            }
         }
 
         return (
