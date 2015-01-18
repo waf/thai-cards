@@ -142,7 +142,11 @@ var Game = React.createClass({
     componentDidMount: function() {
         var self = this;
         util.loadModules("./modules.json", function(allModules) {
-            self.setState({ allModules: allModules });
+            var cards = util.shuffleCardsFromModules(allModules, self.state.activeModules);
+            self.setState({
+                allModules: allModules,
+                cards: cards
+            });
         });
     },
     onCardStarred: function(card) {
