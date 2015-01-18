@@ -7,6 +7,7 @@ http://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js
 ../modules/common.js
 ../modules/lesson%203.js
 ../modules/lesson%204.js
+../modules/lesson%205.js
 ../modules/numbers.js
 ../modules/phrases.js
 ../modules/time%20and%20dates.js
