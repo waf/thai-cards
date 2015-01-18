@@ -12,6 +12,8 @@ To add more words to an existing module, just add the words to the appropriate f
 
 To add a new module, create a new file in the `modules` folder, and then list that module in the `modules.json` file.
 
+To notify offline clients that the app has changed update the `mobile/offline.appcache`. Add any additional files and bump the version number.
+
 Developing
 ==========
 
